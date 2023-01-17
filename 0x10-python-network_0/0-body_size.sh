@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-curl --head -s "$1" | grep "Content-Length" | cut -d ' ' -f i2
+curl -sI $1 | grep  -i Content-Length | awk '{print $2}'
