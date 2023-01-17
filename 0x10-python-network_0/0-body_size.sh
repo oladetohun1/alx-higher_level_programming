@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -sI "$1" | grep -i content-length | awk '{print $2}'
+curl -si "$1" | grep -i content-length
