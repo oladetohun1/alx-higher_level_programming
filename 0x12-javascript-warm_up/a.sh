@@ -1,5 +1,6 @@
 #!/usr/bin/bash
-read -p "write your custom message:" message
+echo "write your custom message:"
+read message
 git add .
-git commit -m'${message}'
+git commit -m" $message"
 git push
