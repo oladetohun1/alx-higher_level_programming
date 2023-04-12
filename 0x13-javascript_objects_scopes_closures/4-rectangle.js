@@ -1,5 +1,6 @@
 #!/usr/bin/node
-// class Rectangle that defines a rectangle
+// a class Rectangle that defines a rectangle
+
 class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
@@ -15,9 +16,9 @@ class Rectangle {
   }
 
   rotate () {
-    const aux = this.width;
+    const tmp = this.width;
     this.width = this.height;
-    this.height = aux;
+    this.height = tmp;
   }
 
   double () {
