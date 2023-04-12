@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/node
 // a function that executes x times a function.
 
 const callMeMoby = function (x, theFunction) {
