@@ -5,7 +5,7 @@ a script that adds the State object “Louisiana” to the database
 
 from sys import argv
 from sqlalchemy import create_engine
-from sqlacademy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 if __name__ == "__main__":
