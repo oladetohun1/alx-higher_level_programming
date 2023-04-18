@@ -23,6 +23,6 @@ if __name__ == "__main__":
     # commit changes
     session.commit()
     # print id of new state
-    print(new_state.id)
+    print("{:d}".format(new_state.id))
     # close session
     session.close()
