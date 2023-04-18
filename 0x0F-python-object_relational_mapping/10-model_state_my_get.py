@@ -3,6 +3,7 @@
 a script that prints the State object with the name
 passed as argument from the database
 """
+
 from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
