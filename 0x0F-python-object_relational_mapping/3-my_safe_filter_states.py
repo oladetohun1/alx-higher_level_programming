@@ -14,8 +14,9 @@ if __name__ == '__main__':
                          db=argv[3],
                          port=3306)
     cursor = db.cursor()
-    cursor.execute("""SELECT * FROM states WHERE name=%s
-        ORDER BY id ASC""", (argv[4],))
+    cursor.execute(
+        """SELECT * FROM states WHERE name=%s ORDER BY id ASC""", (argv[4],)
+    )
     # cursor.execute("""SELECT * FROM states WHERE name LIKE '{:s}'
     #   ORDER BY id ASC""".format(argv[4]))
     for row in cursor.fetchall():
