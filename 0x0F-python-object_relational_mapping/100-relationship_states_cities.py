@@ -3,13 +3,11 @@
 a script that creates the State “California”
 with the City “San Francisco” from the database
 """
-
-from relationship_state import Base, State
-from relationship_city import City
+from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sys import argv
-
+from relationship_state import Base, State
+from relationship_city import City
 if __name__ == "__main__":
     # Create an engine that stores data in the local directory's
     # sqlalchemy_example.db file.
