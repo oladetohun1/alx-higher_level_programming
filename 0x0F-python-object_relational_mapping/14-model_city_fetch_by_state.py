@@ -4,7 +4,7 @@ a script that prints all City objects from the database
 '''
 
 from sys import argv
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_city import Base, City
 from model_state import Base, State
