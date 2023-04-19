@@ -3,7 +3,7 @@
 a script that chaanges the name of a state object from the database
 '''
 from sys import argv
-from mysqlacademy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
