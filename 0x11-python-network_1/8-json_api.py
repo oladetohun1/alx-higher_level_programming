@@ -1,33 +1,38 @@
 #!/usr/bin/python3
-""" a Python script that takes in a letter and sends a POST request to
-http://0.0.0.0:5000/search_user with the letter as a parameter. """
+"""
+This module defines a script that takes in a letter and sends a POST request to
+http://0.0.0.0:5000/search_user with the letter as a parameter.
+
+Usage:
+    ./my_script.py <letter>
+
+Returns:
+    If the POST request is successful and the response contains a valid JSON,
+    it prints the ID and name of the first user that matches the letter search.
+    If the response does not contain a valid JSON, it prints "Not a valid JSON".
+    If no user matches the letter search, it prints "No result".
+
+Example:
+    ./my_script.py a
+"""
 
 import requests
-import sys
+from sys import argv
 
 if __name__ == "__main__":
-    '''
-    if the letter is sent, it must be sent as a letter parameter of the
-    request and if the response body is properly JSON formatted and not empty,
-    display the id and name like this: [<id>] <name>
-    Otherwise:
-        Display Not a valid JSON if the JSON is invalid
-        Display No result if the JSON is empty
-    '''
-    if len(sys.argv) > 1:
-        letter = sys.argv[1]
+    if len(argv) < 2:
+        q = ""
     else:
-        letter = ""
+        q = argv[1]
 
-    letter_search = {"q": letter}
+    letter_search = {"q": q}
     url = "http://0.0.0.0:5000/search_user"
     response = requests.post(url, letter_search)
-    print(response.content)
 
     try:
-        json_response = response.json()
-        if json_response:
-            print(f"{[json_response.get('id')]} {json_response.get('name')}")
+        value_found = response.json()
+        if value_found:
+            print(f"{[value_found.get('id')]} {value_found.get('name')}")
         else:
             print("No result")
 
