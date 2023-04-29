@@ -6,6 +6,14 @@ import requests
 import sys
 
 if __name__ == "__main__":
+    '''
+    if the letter is sent, it must be sent as a letter parameter of the
+    request and if the response body is properly JSON formatted and not empty,
+    display the id and name like this: [<id>] <name>
+    Otherwise:
+        Display Not a valid JSON if the JSON is invalid
+        Display No result if the JSON is empty
+    '''
     if len(sys.argv) > 1:
         letter = sys.argv[1]
     else:
