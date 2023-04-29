@@ -13,7 +13,7 @@ if __name__ == "__main__":
         q = ""
     req = requests.post(url, data={'q': q})
     print(req.content)
-    
+
     try:
         json = req.json()
         if json:
