@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This is the peak module."""
+"""This is the peak module. it finds a peak in a lists of unsorted integers"""
 
 
 def find_peak(list_of_integers):
