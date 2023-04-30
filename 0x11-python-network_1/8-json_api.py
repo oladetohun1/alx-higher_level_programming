@@ -9,7 +9,7 @@ Usage:
 Returns:
     If the POST request is successful and the response contains a valid JSON,
     it prints the ID and name of the first user that matches the letter search.
-    If the response does not contain a valid JSON, it prints "Not a valid JSON".
+    If the response does not contain a valid JSON,it prints "Not a valid JSON".
     If no user matches the letter search, it prints "No result".
 
 Example:
