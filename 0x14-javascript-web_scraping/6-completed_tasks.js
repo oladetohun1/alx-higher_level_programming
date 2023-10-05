@@ -1,21 +1,40 @@
 #!/usr/bin/node
 const request = require('request');
 
-if (process.argv.length > 2) {
-  request(process.argv[2], (err, res, body) => {
-    const aggregate = {};
+// API URL
+const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
-    if (err) {
-      console.log(err);
+// Function to compute the number of completed tasks by user id
+function computeCompletedTasksByUserId (apiUrl) {
+  request(apiUrl, (error, response, body) => {
+    if (error) {
+      console.error('Error:', error);
+      return;
     }
-    JSON.parse(body).forEach(element => {
-      if (element.completed) {
-        if (!aggregate[element.userId]) {
-          aggregate[element.userId] = 0;
+
+    // Parse the response body
+    const todos = JSON.parse(body);
+
+    // Create an object to store the count of completed tasks for each user ID
+    const completedTasksByUserId = {};
+
+    // Loop through the todos and count completed tasks for each user ID
+    todos.forEach((todo) => {
+      if (todo.completed) {
+        if (completedTasksByUserId[todo.userId]) {
+          completedTasksByUserId[todo.userId]++;
+        } else {
+          completedTasksByUserId[todo.userId] = 1;
         }
-        aggregate[element.userId]++;
       }
     });
-    console.log(aggregate);
+
+    // Print users with completed tasks
+    console.log('Users with completed tasks:');
+    for (const userId in completedTasksByUserId) {
+      console.log(JSON.stringify(`${userId}:, ${completedTasksByUserId[userId]}`));
+    }
   });
 }
+
+computeCompletedTasksByUserId(apiUrl);
