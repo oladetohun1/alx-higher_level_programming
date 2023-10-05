@@ -1,2 +1,9 @@
-<h1>JavaScript - Web scraping</h1>
-<p>Manipulating JSON data and using request abd fetch API and reading and writing a file using <em>fs</em> module</p>
+# 0x14. JavaScript - Web scraping
+
+## Objectives
+* Why JavaScript programming is amazing
+* How to manipulate JSON data
+* How to use request and fetch API
+* How to read and write a file using fs module
+
+## Tasks
